@@ -1,17 +1,19 @@
-{% assign product_list = collections['cloths'].products %}
+{% assign collection = {{ section.settings.my-collection }} %}
 
 <div class="page-width">
-  <ul>
-    {%- for product in product_list -%}
-      <li>product.title</li>
-    {%- endfor -%}
-  </ul>
+  {{ collection.title }}
 </div>
 
 {% schema %}
 {
   "name": "My Own Section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "collection",
+      "id": "my-collection",
+      "label": "Select Collection"
+    }
+  ],
   "blocks": [],
   "presets": [
     {
