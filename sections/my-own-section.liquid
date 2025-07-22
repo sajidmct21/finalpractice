@@ -1,24 +1,24 @@
-<div class="page-width">
-   <h1> {{ shop.name |capitalize }}</h1>
-</div>
+{% assign product_list = collections.home.products %}
 
+<div class="page-width">
+  <ul>
+    {%- for product in product_list -%}
+      <li>product.title</li>
+    {%- endfor -%}
+  </ul>
+</div>
 
 {% schema %}
 {
-    "name": "My Own Section",
-    "settings": [   
-    ],
-    "blocks": [
-      
-    ],
-    "presets": [
-      {
-        "name": "My Own Generated Section",
-        "category": "Custom",
-        "settings": {
-          
-        }
-      }
-    ],
+  "name": "My Own Section",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "My Own Generated Section",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
 }
 {% endschema %}
