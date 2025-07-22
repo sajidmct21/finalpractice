@@ -7,7 +7,7 @@
   {%- for pro in pro_list -%}
     <li>
       {{ pro.title }}
-      {{ pro.featured_image | image_url: width: 400 | image_tag }}
+      {{ pro.featured_image | image_url: width: 400 | image_tag: alt: pro.title }}
     </li>
   {%- endfor -%}
 </ul>
