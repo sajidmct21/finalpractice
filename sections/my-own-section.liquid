@@ -1,3 +1,13 @@
+
+
+<div class="page-width">
+<ul>
+  {%- for product in section.settings.collection.products -%}
+    <li>{{ product.title }}</li>
+  {%- endfor -%}
+</ul>
+</div>
+
 {% schema %}
 {
   "name": "Products List",
@@ -12,10 +22,8 @@
     {
       "name": "Products List",
       "category": "Custom",
-      "settings": {
-        
-      }
+      "settings": {}
     }
-  ],
+  ]
 }
 {% endschema %}
