@@ -5,7 +5,10 @@
 <div class="page-width">
 <ul>
   {%- for pro in pro_list -%}
-    <li>{{ pro.title }}</li>
+    <li>
+      {{ pro.title }}
+      {{ pro.featured_image | image_url: width: 400 | image_tag }}
+    </li>
   {%- endfor -%}
 </ul>
 </div>
