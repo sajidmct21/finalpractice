@@ -78,7 +78,7 @@
         "padding_bottom": 36
       }
     },
-    "my_own_section_dtKgCa": {
+    "my_own_section_tn96i6": {
       "type": "my-own-section",
       "name": "Products List",
       "settings": {
@@ -89,6 +89,6 @@
   "order": [
     "image_banner",
     "featured_collection",
-    "my_own_section_dtKgCa"
+    "my_own_section_tn96i6"
   ]
 }
