@@ -1,7 +1,11 @@
-{% assign collection = {{ section.settings.my-collection }} %}
+{% assign collection_list = {{ section.settings.collection_list }} %}
 
 <div class="page-width">
-  {{ collection.title }}
+  <ul>
+ {%- for collection in {{ section.settings.collection_list }} -%}
+   <li>{{ collection.title }}</li>
+ {%- endfor -%}
+</ul>
 </div>
 
 {% schema %}
@@ -9,10 +13,11 @@
   "name": "My Own Section",
   "settings": [
     {
-      "type": "collection",
-      "id": "my-collection",
-      "label": "Select Collection"
-    }
+  "type": "collection_list",
+  "id": "collection_list",
+  "label": "Collections",
+  "limit": 8
+}
   ],
   "blocks": [],
   "presets": [
