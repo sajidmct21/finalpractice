@@ -1,5 +1,6 @@
 {%- liquid
   assign pro_list = section.settings.collection.products
+  assign col = collections
 -%}
 
 <div class="page-width">
@@ -10,6 +11,19 @@
         {{ pro.price }}
         {{ pro.description }}
         {{ pro.featured_image | image_url: width: 400 | image_tag: alt: pro.title }}
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <br>
+  <h1>Collections</h1>
+  <br>
+  <ul>
+    {%- for c in col -%}
+      <li>
+        {{ c.title }}
+        {{ c.description }}
+        {{ c.featured_image | image_url: width: 400 | image_tag: alt: c.title }}
       </li>
     {%- endfor -%}
   </ul>
