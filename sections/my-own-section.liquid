@@ -1,37 +1,12 @@
-{% comment %}
-Assuming you've assigned a collection with all products (e.g., "All") in the section settings
-{% endcomment %}
-
-{% if section.settings.collection != blank %}
-  <ul>
-    {% for product in section.settings.collection.products %}
-      <li>{{ product.title }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>Please select a collection in the section settings.</p>
-{% endif %}
-
-
-
-
-
 {% schema %}
 {
-  "name": "All Product Titles",
-  "tag": "section",
+  "name": "Products List",
   "settings": [
     {
       "type": "collection",
       "id": "collection",
-      "label": "Choose a collection"
+      "label": "Select a Collection"
     }
   ],
-  "presets": [
-    {
-      "name": "All Product Titles Section",
-      "category": "Custom"
-    }
-  ]
 }
 {% endschema %}
