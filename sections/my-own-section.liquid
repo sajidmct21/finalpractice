@@ -3,14 +3,16 @@
 -%}
 
 <div class="page-width">
-<ul>
-  {%- for pro in pro_list -%}
-    <li>
-      {{ pro.title }}
-      {{ pro.featured_image | image_url: width: 400 | image_tag: alt: pro.title }}
-    </li>
-  {%- endfor -%}
-</ul>
+  <ul>
+    {%- for pro in pro_list -%}
+      <li>
+        {{ pro.title }}
+        {{ pro.price }}
+        {{ pro.description }}
+        {{ pro.featured_image | image_url: width: 400 | image_tag: alt: pro.title }}
+      </li>
+    {%- endfor -%}
+  </ul>
 </div>
 
 {% schema %}
