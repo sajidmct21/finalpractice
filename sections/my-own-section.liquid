@@ -1,29 +1,36 @@
-{% assign collection_list = {{ section.settings.collection }} %}
+{% comment %}
+Assuming you've assigned a collection with all products (e.g., "All") in the section settings
+{% endcomment %}
 
-<div class="page-width">
+{% if section.settings.collection != blank %}
   <ul>
- {%- for collection in {{ section.settings.collection }} -%}
-   <li>{{ collection.title }}</li>
- {%- endfor -%}
-</ul>
-</div>
+    {% for product in section.settings.collection.products %}
+      <li>{{ product.title }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Please select a collection in the section settings.</p>
+{% endif %}
+
+
+
+
 
 {% schema %}
 {
-  "name": "My Own Section",
+  "name": "All Product Titles",
+  "tag": "section",
   "settings": [
- {
-  "type": "collection",
-  "id": "collection",
-  "label": "Collection"
-}
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose a collection"
+    }
   ],
-  "blocks": [],
   "presets": [
     {
-      "name": "My Own Generated Section",
-      "category": "Custom",
-      "settings": {}
+      "name": "All Product Titles Section",
+      "category": "Custom"
     }
   ]
 }
