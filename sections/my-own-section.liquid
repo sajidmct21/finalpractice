@@ -19,47 +19,48 @@
     </ul>
   {% endcomment %}
 
+  {% comment %}
+    <ul>
+      {%- for c in collections -%}
+        <li>
+          <h1>{{ c.title }}</h1>
+          {{ c.all_products_count }}
+          <br>
+          {{ c.all_tags }}
+          <br>
+          {{ c.all_types }}
+          <br>
+          {{ c.all_vendors }}
+          <br>
+          {{ c.current_type }}
+          <br>
+          {{ c.default_sort_by }}
+          <br>
+          {{ c.description }}
+          <br>
+          {{ c.featured_image | image_url: width: 300, height:300 | image_tag: alt:c.title  }}
+          <br>
+          {{ c.handle }}
+          <br>
+          {{ c.id }}
+          <br>
+          {{ c.published_at | date }}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {% endcomment %}
+  {% assign product = all_products['led-high-tops'] %}
 
-  {% comment %} <ul>
-    {%- for c in collections -%}
-      <li>
-        <h1>{{ c.title }}</h1>
-        {{ c.all_products_count }}
-        <br>
-        {{ c.all_tags }}
-        <br>
-        {{ c.all_types }}
-        <br>
-        {{ c.all_vendors }}
-        <br>
-        {{ c.current_type }}
-        <br>
-        {{ c.default_sort_by }}
-        <br>
-        {{ c.description }}
-        <br>
-        {{ c.featured_image | image_url: width: 300, height:300 | image_tag: alt:c.title  }}
-        <br>
-        {{ c.handle }}
-        <br>
-        {{ c.id }}
-        <br>
-        {{ c.published_at | date }}
-      </li>
-    {%- endfor -%}
-  </ul> {% endcomment %}
-{% assign product = all_products['led-high-tops'] %}
-
-{{ product.title }}
-<br>
-{{ product.available }}
-<br>
-{{ product.collections[0].title }}
-<br>
-{{ product.featured_image | image_url: width: 300 | image_tag }}
- {{ product.featured_media | media_tag: image_size: '300' }}
-
-
+  {{ product.title }}
+  <br>
+  {{ product.available }}
+  <br>
+  {{ product.collections[0].title }}
+  <br>
+  {{ product.featured_image | image_url: width: 300 | image_tag }}
+  {{ product.featured_media | media_tag: image_size: '300' }}
+  <br>
+  {{ product.first_available_variant }}
 
 
 </div>
