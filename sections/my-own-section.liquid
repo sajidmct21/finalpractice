@@ -57,6 +57,7 @@
 {{ product.collections[0].title }}
 <br>
 {{ product.featured_image | image_url: width: 300 | image_tag }}
+ {{ product.featured_media | media_tag: image_size: '300' }}
 
 
 
