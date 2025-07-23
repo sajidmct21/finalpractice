@@ -21,16 +21,9 @@
   <ul> 
     {%- for c in collections -%}
       <li>
-        {{ c.title }}
-        {{ c.description }}
-        {{ c.featured_image | image_url: width: 400 | image_tag: alt: c.title }}
+        {{ c.all_products_count }}
       </li>
       <h1>{{ c.title }}</h1>
-      <ul>
-      {%- for p in c.products -%}
-        <li>{{p.title}} </li>
-      {%- endfor -%}
-      </ul>
     {%- endfor -%}
   </ul>
 </div>
