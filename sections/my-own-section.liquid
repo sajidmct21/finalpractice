@@ -1,10 +1,10 @@
-{%- liquid
+{% comment %} {%- liquid
   assign pro_list = section.settings.collection.products
   assign col = collections
--%}
+-%}{% endcomment %}
 
 <div class="page-width">
-  <ul>
+  {% comment %}<ul>
     {%- for pro in pro_list -%}
       <li>
         {{ pro.title }}
@@ -17,8 +17,8 @@
 
   <br>
   <h1>All Collections</h1>
-  <br>
-  <ul>
+  <br>{% endcomment %}
+  <ul> 
     {%- for c in collections -%}
       <li>
         {{ c.title }}
