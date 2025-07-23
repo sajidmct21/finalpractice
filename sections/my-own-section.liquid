@@ -37,6 +37,8 @@
         {{ c.default_sort_by }}
         <br>
         {{ c.description }}
+        <br>
+        {{ c.featured_image | image_url: width: 300, height:300 | image_tag: alt:c.title  }}
       </li>
     {%- endfor -%}
   </ul>
