@@ -28,7 +28,7 @@
       <h1>{{ c.title | | concat: ' Products' }}</h1>
       <ul>
       {%- for p in c.products -%}
-        <li>{{p.title}}</li>
+        <li>{{p.title}} </li>
       {%- endfor -%}
       </ul>
     {%- endfor -%}
