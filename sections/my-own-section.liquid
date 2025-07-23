@@ -20,7 +20,7 @@
   {% endcomment %}
 
 
-  <ul>
+  {% comment %} <ul>
     {%- for c in collections -%}
       <li>
         <h1>{{ c.title }}</h1>
@@ -47,7 +47,14 @@
         {{ c.published_at | date }}
       </li>
     {%- endfor -%}
-  </ul>
+  </ul> {% endcomment %}
+{% assign prod = all_products['led-high-tops'] %}
+
+{{ prod.title }}
+
+
+
+
 </div>
 
 {% schema %}
