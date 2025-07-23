@@ -41,6 +41,8 @@
         {{ c.featured_image | image_url: width: 300, height:300 | image_tag: alt:c.title  }}
         <br>
         {{ c.handle }}
+        <br>
+        {{ c.id }}
       </li>
     {%- endfor -%}
   </ul>
