@@ -19,16 +19,13 @@
     </ul>
   {% endcomment %}
 
-  <br>
-  <h1>All Collections</h1>
-  <br>
+
   <ul>
     {%- for c in collections -%}
       <li>
-        {{ c.title }}
+        <h1>{{ c.title }}</h1>
         {{ c.all_products_count }}
       </li>
-      <h1>{{ c.title }}</h1>
     {%- endfor -%}
   </ul>
 </div>
