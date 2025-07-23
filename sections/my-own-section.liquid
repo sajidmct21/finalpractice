@@ -13,11 +13,11 @@
         {{ pro.featured_image | image_url: width: 400 | image_tag: alt: pro.title }}
       </li>
     {%- endfor -%}
-  </ul>
+  </ul>{% endcomment %}
 
   <br>
   <h1>All Collections</h1>
-  <br>{% endcomment %}
+  <br>
   <ul> 
     {%- for c in collections -%}
       <li>
