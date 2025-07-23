@@ -55,6 +55,8 @@
 {{ product.available }}
 <br>
 {{ product.collections[0].title }}
+<br>
+{{ product.featured_image | image_url: width: 300 | image_tag }}
 
 
 
