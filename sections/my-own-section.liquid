@@ -49,7 +49,7 @@
       {%- endfor -%}
     </ul>
   {% endcomment %}
-  {% assign product = all_products['led-high-tops'] %}
+  {% comment %} {% assign product = all_products['led-high-tops'] %}
 
   {{ product.title }}
   <br>
@@ -64,7 +64,9 @@
   <br>
   {{ product.handle }}
   <br>
-  {{ product.url }}
+  {{ product.url }} {% endcomment %}
+
+  <h1>{{ article.title }}</h1>
 
 
 </div>
