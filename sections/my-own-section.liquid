@@ -66,8 +66,10 @@
   <br>
   {{ product.url }} {% endcomment %}
 
-  <h1>{{ article.title }}</h1>
-  
+  {%- for article in array blog.diamond-blog.article -%}
+    <h1>{{ article.title }}</h1>
+  {%- endfor -%}
+
 
 
 </div>
