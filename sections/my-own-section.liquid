@@ -67,6 +67,8 @@
   {{ product.url }} {% endcomment %}
 
     <h1>{{ article.title }}</h1>
+    {{ article.image | image_url: width: 300 | image_tag  }}
+    <h3>{{ article.author }}</h3>
 
 
 
