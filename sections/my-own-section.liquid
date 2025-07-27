@@ -1,21 +1,20 @@
-
 <h1>First Section</h1>
 <ul class="pro">
-{%- for product in section.settings.collection.products -%}
-  {%- if product.title -%}
-    <li>
-    {{ product.title }}
-    {{ product.featured_image | image_url: width: 400 | image_tag }}
-    {{ product.price }}
-    </li>
-  {%- endif -%}
-  
-{%- endfor -%}
+  {%- for product in section.settings.collection.products -%}
+    {%- if product.title -%}
+      <li>
+        {{ product.title }}
+        {{ product.featured_image | image_url: width: 400 | image_tag }}
+        {{ product.price }}
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
 </ul>
 
 <style>
-  .pro{
-    display:flex;
+  .pro {
+    display: flex;
+    flex-wrap: nowrap;
   }
 </style>
 {% schema %}
