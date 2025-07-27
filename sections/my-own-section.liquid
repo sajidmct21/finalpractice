@@ -12,22 +12,22 @@
     margin: 20px;
   }
 {% endstyle %}
-
-<h1>Featured Collection</h1>
-<ul class="pro">
-  {%- for product in section.settings.collection.products -%}
-    {%- if product.title -%}
-      <li>
-        {{ product.title }}
-        {{ product.featured_image | image_url: width: 400 | image_tag }}
-        {{ product.price | money }}
-        {{ product.vendor }}
-        {{ product.id }}
-      </li>
-    {%- endif -%}
-  {%- endfor -%}
-</ul>
-
+<div class="page-width">
+  <h1>Featured Collection</h1>
+  <ul class="pro">
+    {%- for product in section.settings.collection.products -%}
+      {%- if product.title -%}
+        <li>
+          {{ product.title }}
+          {{ product.featured_image | image_url: width: 400 | image_tag }}
+          {{ product.price | money }}
+          {{ product.vendor }}
+          {{ product.id }}
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
 {% schema %}
 {
   "name": "Products List",
