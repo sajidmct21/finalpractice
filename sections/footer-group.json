@@ -34,20 +34,12 @@
             "heading": "Heading",
             "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
-        },
-        "text_b3jcjw": {
-          "type": "text",
-          "settings": {
-            "heading": "Heading",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
-          }
         }
       },
       "block_order": [
         "link_list_xXP7J3",
         "link_list_qtniGU",
-        "text_fBpCFE",
-        "text_b3jcjw"
+        "text_fBpCFE"
       ],
       "settings": {
         "color_scheme": "scheme-1",
