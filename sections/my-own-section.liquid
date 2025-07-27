@@ -11,7 +11,7 @@
     flex-direction: column;
     margin: 20px;
   }
-  .circle{
+  .pro img{
     border-radius:50%;
   }
 {% endstyle %}
@@ -22,7 +22,7 @@
       {%- if product.title -%}
         <li>
           {{ product.title }}
-          {{ product.featured_image | image_url: width: 300, height: 300| image_tag: class:circle; }}
+          {{ product.featured_image | image_url: width: 300, height: 300| image_tag}}
           {{ product.price | money }}
           {{ product.vendor }}
           {{ product.id }}
