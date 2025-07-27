@@ -11,12 +11,14 @@
   {%- endfor -%}
 </ul>
 
-<style>
+{% style %}
   .pro {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
   }
-</style>
+{% endstyle %}
 {% schema %}
 {
   "name": "Products List",
