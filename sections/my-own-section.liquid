@@ -11,6 +11,9 @@
     flex-direction: column;
     margin: 20px;
   }
+  .circle{
+    border-radius:50%;
+  }
 {% endstyle %}
 <div class="page-width">
   <h1 style="text-align:center;">Featured Collection</h1>
@@ -19,7 +22,7 @@
       {%- if product.title -%}
         <li>
           {{ product.title }}
-          {{ product.featured_image | image_url: width: 400 | image_tag }}
+          {{ product.featured_image | image_url: width: 300, height: 300| image_tag: class:circle; }}
           {{ product.price | money }}
           {{ product.vendor }}
           {{ product.id }}
