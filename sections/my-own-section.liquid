@@ -2,17 +2,16 @@
   .pro {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
-  .pro li{
+  .pro li {
     display: flex;
-    flex-direction:column;
-    margin:20px;
+    flex-direction: column;
+    margin: 20px;
   }
 {% endstyle %}
-
 
 <h1>Featured Collection</h1>
 <ul class="pro">
@@ -28,7 +27,6 @@
     {%- endif -%}
   {%- endfor -%}
 </ul>
-
 
 {% schema %}
 {
