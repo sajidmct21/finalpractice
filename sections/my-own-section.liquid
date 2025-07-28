@@ -1,6 +1,7 @@
 <h1>My Collections</h1>
 {% for collection in collections %}
   <h2>{{ collection.title }}</h2>
+  <span>{{ collection.handle }}</span>
 {% endfor %}
 <hr>
 {%- for product in collections['frontpage'].products -%}
