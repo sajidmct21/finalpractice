@@ -1,36 +1,4 @@
-{% style %}
-  .pro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-  }
-  .pro li {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-  .pro img{
-    border-radius:50%;
-  }
-{% endstyle %}
-<div class="page-width">
-  <h1 style="text-align:center;">Featured Collection</h1>
-  <ul class="pro">
-    {%- for product in section.settings.collection.products -%}
-      {%- if product.title -%}
-        <li>
-          {{ product.title }}
-          {{ product.featured_image | image_url: width: 300, height: 300| image_tag}}
-          {{ product.price | money }}
-          {{ product.vendor }}
-          {{ product.id }}
-        </li>
-      {%- endif -%}
-    {%- endfor -%}
-  </ul>
-</div>
+
 {% schema %}
 {
   "name": "Products List",
