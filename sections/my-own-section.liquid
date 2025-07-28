@@ -15,15 +15,17 @@
   <span>{{ collection.handle }}</span>
 {% endfor %}
 <hr>
-{%- for product in collections.frontpage.products -%}
+
   <div class="pro-card">
+    {%- for product in collections.frontpage.products -%}
     <div class="card">
       <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
       <h2>{{ product.title }}</h2>
       <p>{{ product.price | money }}</p>
     </div>
+    {%- endfor -%}
   </div>
-{%- endfor -%}
+
 {% schema %}
 {
   "name": "Products List",
