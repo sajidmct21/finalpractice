@@ -2,6 +2,6 @@
 
 <ul>
   {%- for link in linklists['main-menu'].links -%}
-    {{ link.title | link_to: link.url }}
+   <li> {{ link.title | link_to: link.url }}</li>
   {%- endfor -%}
 </ul>
