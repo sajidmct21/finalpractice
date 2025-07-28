@@ -1,8 +1,12 @@
 {% stylesheet %}
-  .pro-card{
+  .pro-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+  .card{
+    display: flex;
+    flex-direction: column;
   }
 {% endstylesheet %}
 <h1>My Collections</h1>
@@ -13,9 +17,11 @@
 <hr>
 {%- for product in collections.frontpage.products -%}
   <div class="pro-card">
-    <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
-    <h2>{{ product.title }}</h2>
-    <p>{{ product.price | money }}</p>
+    <div class="card">
+      <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.price | money }}</p>
+    </div>
   </div>
 {%- endfor -%}
 {% schema %}
