@@ -5,7 +5,7 @@
     justify-content: flex-start;
     gap: 10px;
   }
-  .card{
+  .card {
     display: flex;
     flex-direction: column;
   }
@@ -17,15 +17,17 @@
 {% endfor %}
 <hr>
 
-  <div class="pro-card">
-    {%- for product in collections.frontpage.products -%}
-    <div class="card">
-      <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
-      <h2>{{ product.title }}</h2>
-      <p>{{ product.price | money }}</p>
-    </div>
-    {%- endfor -%}
-  </div>
+<div class="pro-card">
+  {%- for product in collections.frontpage.products -%}
+    <a href="{{ product.url }}">
+      <div class="card">
+        <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.price | money }}</p>
+      </div>
+    </a>
+  {%- endfor -%}
+</div>
 
 {% schema %}
 {
