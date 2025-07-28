@@ -1,1 +1,10 @@
 <h1>{{ shop.name }}</h1>
+
+<ul>
+    {%- for link in linklists.main-menu.link -%}
+        <li>
+            {{ link.title |link_to: link.url }}
+        </li>
+      
+    {%- endfor -%}
+</ul>
