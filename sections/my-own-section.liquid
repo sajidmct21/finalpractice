@@ -6,7 +6,7 @@
 <hr>
 {%- for product in collections['frontpage'].products -%}
   <div>
-    <img src="{{ product.image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
+    <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
     <h2>{{ product.title }}</h2>
     <p>{{ product.price }}</p>
   </div>
