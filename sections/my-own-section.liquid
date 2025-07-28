@@ -5,7 +5,11 @@
 {% endfor %}
 <hr>
 {%- for product in collections['frontpage'].products -%}
-  <h3>{{ product.title }}</h3>
+  <div>
+    <img src="{{ product.image | image_url }}" width="" height="" alt="{{ product.title }}">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price }}</p>
+  </div>
 {%- endfor -%}
 {% schema %}
 {
