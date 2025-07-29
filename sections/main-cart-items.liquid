@@ -5,6 +5,7 @@
     <div>
       <img src="{{ item.image | image_url:width:200 }}" height="" width="" alt="{{ item.title }}">
       <p>{{ item.final_price | money }}</p>
+      <a href="{{ item.url_to_remove }}">Remove</a>
     </div>
   {% endfor %}
   <hr>
