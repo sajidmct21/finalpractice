@@ -1,11 +1,15 @@
-<h1>Cart</h1>
+{% form 'cart', cart %}
+  <h1>Cart</h1>
 
-{% for item in cart.items %}
-  <div>
-    <img src="{{ item.image | image_url:width:200 }}" height="" width="" alt="{{ item.title }}">
-    <p>{{ item.final_price |money }}</p>
-  </div>
-{% endfor %}
+  {% for item in cart.items %}
+    <div>
+      <img src="{{ item.image | image_url:width:200 }}" height="" width="" alt="{{ item.title }}">
+      <p>{{ item.final_price | money }}</p>
+    </div>
+  {% endfor %}
+
+  <button type="submit" name="checkout">Checkout</button>
+{% endform %}
 
 {% comment %}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
