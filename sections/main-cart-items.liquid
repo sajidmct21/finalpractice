@@ -8,7 +8,7 @@
     </div>
   {% endfor %}
   <hr>
-  <p>Total: {{ cart.total_price }}</p>
+  <p>Total: {{ cart.total_price | money }}</p>
 
   <button type="submit" name="checkout">Checkout</button>
 {% endform %}
