@@ -5,12 +5,13 @@
     <div>
       <img src="{{ item.image | image_url:width:200 }}" height="" width="" alt="{{ item.title }}">
       <p>{{ item.final_price | money }}</p>
+      <input name="update[]" value="{{ item.quantity }}">
       <a href="{{ item.url_to_remove }}">Remove</a>
     </div>
   {% endfor %}
   <hr>
   <p>Total: {{ cart.total_price | money }}</p>
-
+<button type="submit" name="update">Update</button>
   <button type="submit" name="checkout">Checkout</button>
 {% endform %}
 
