@@ -1,37 +1,10 @@
-{% stylesheet %}
-  .pro-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 10px;
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-  }
-{% endstylesheet %}
-<h1>My Collections</h1>
-{% for collection in collections %}
-  <h2>{{ collection.title }}</h2>
-  <span>{{ collection.handle }}</span>
-{% endfor %}
-<hr>
-
-<div class="pro-card">
-  {%- for product in collections.frontpage.products -%}
-    <a href="{{ product.url }}">
-      <div class="card">
-        <img src="{{ product.featured_image | image_url: width:250 }}" width="" height="" alt="{{ product.title }}">
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.price | money }}</p>
-      </div>
-    </a>
-  {%- endfor -%}
-</div>
+{%- assign var = 'one two three' -%}
+{{ var | base64_encode | base64_decode }}
 
 {% schema %}
 {
   "name": "Products List",
+
   "settings": [
     {
       "type": "collection",

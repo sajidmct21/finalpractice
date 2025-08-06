@@ -1,0 +1,4 @@
+[development]
+store = "https://finalpractice.myshopify.com"
+password = "12345" # replace with your actual store's password
+theme_id = 134825869425
