@@ -1,7 +1,25 @@
-{%- assign var = 'one two three' -%}
-{{ var | base64_encode | base64_decode }}
+<p>
+{{- 'Sajid ' | append: 'Yaqoob' -}}
+</p>
+
+{% assign arr = "one, Two" | split: ',' %}
+{%- assign arr2 = " Three, Four, Five" | split: ',' -%}
+{%- assign arr3 = arr | concat: arr2 -%}
+{%- assign numbers = "1,2,3,3" | split:',' -%}
+
+<p>{{ arr2 | sort }}</p>
+<p>{{ numbers | uniq }}</p>
+
+{%- for num in arr3 -%}
+  {%- if num != blank -%}
+    {{ num }}
+  {%- else -%}
+    {{ 'Item is blank' }}
+  {%- endif -%}
+{%- endfor -%}
 
 {% schema %}
+
 {
   "name": "Products List",
 

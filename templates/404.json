@@ -1,1 +1,15 @@
-{"sections":{"main":{"type":"main-404","settings":{}}},"order":["main"]}
+// {
+//   "sections": { "main": { "type": "main-404", "settings": {} } },
+//   "order": ["main"]
+// }
+
+{
+    "name":"template-404",
+    "layout":"custom_theme",
+    "sections":{
+        "template-404":{
+            "type":"example-404"
+        }
+    },
+    "order":["template-404"]
+}

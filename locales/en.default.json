@@ -1,5 +1,9 @@
 {
   "general": {
+    "404":{
+      "title":"Not Found",
+      "sub_text":"This page your are looking for does not exist"
+    },
     "password_page": {
       "login_form_heading": "Enter store using password:",
       "login_password_button": "Enter using password",

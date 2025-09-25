@@ -1,0 +1,11 @@
+<!doctype html>
+<html class="js" lang="{{ request.locale.iso_code }}">
+  <head>
+    {{ content_for_header }}
+  </head>
+  <body>
+    <h1>I am in Custom Theme Layout</h1>
+    {% render 'my-header' %}
+    {{ content_for_layout }}
+  </body>
+</html>
