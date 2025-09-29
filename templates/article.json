@@ -7,54 +7,81 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
+// {
+//   "sections": {
+//     "main": {
+//       "type": "main-article",
+//       "blocks": {
+//         "featured_image": {
+//           "type": "featured_image",
+//           "settings": {
+//             "image_height": "adapt"
+//           }
+//         },
+//         "title": {
+//           "type": "title",
+//           "settings": {
+//             "blog_show_date": true,
+//             "blog_show_author": false
+//           }
+//         },
+//         "share": {
+//           "type": "share",
+//           "settings": {
+//             "share_label": "Share"
+//           }
+//         },
+//         "content": {
+//           "type": "content",
+//           "settings": {}
+//         }
+//       },
+//       "block_order": [
+//         "featured_image",
+//         "title",
+//         "share",
+//         "content"
+//       ],
+//       "disabled": true,
+//       "settings": {}
+//     },
+//     "my_own_section_ChdTiy": {
+//       "type": "my-own-section",
+//       "name": "Products List",
+//       "settings": {
+//         "collection": ""
+//       }
+//     }
+//   },
+//   "order": [
+//     "main",
+//     "my_own_section_ChdTiy"
+//   ]
+// }
+
 {
-  "sections": {
-    "main": {
-      "type": "main-article",
-      "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
+  "sections":{
+    "main":{
+      "type":"main-article-my",
+      "blocks":{
+        "title":{
+          "type":"auther_title"
         },
-        "title": {
-          "type": "title",
-          "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
+        "auther-name":{
+          "type":"author_name"
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
+        "article-publised-date":{
+          "type":"article_publish_date"
         },
-        "content": {
-          "type": "content",
-          "settings": {}
+        "thumbnail":{
+          "type":"featured_image"
+        },
+        "content":{
+          "type":"aritcle_content"
         }
       },
-      "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "my_own_section_ChdTiy": {
-      "type": "my-own-section",
-      "name": "Products List",
-      "settings": {
-        "collection": ""
-      }
+      "block_order":["title","author-name","article-publised-date","thumbnail","content"]
     }
   },
-  "order": [
-    "main",
-    "my_own_section_ChdTiy"
-  ]
+  "order":["main"]
 }
