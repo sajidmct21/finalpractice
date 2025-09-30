@@ -65,6 +65,12 @@
   {%- endfor -%}
 </article>
 
+{%- if blog.comments_enabled? -%}
+  
+{%- else -%}
+  <p>No comment is available</p>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "main-article-my",
