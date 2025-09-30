@@ -1,7 +1,7 @@
 <h1>{{ shop.name }}</h1>
 
 <ul>
-  {%- for link in linklists['main-menu'].links -%}
+  {%- for link in linklists['customer-account-main-menu'].links -%}
    <li> {{ link.title | link_to: link.url }}</li>
   {%- endfor -%}
 </ul>
