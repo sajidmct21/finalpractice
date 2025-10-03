@@ -46,29 +46,77 @@
       {%- when 'featured_image' -%}
         <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden flex justify-center items-center">
           {%- if article.image != blank -%}
-            <img src="{{ article.image | image_url: height:200, width:200 }}"  alt="image" width="" height="200">
-            {%- else -%}
-              {%- assign placehoder_image = 'lifestyle-2' -%}
-              {{ placehoder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
+            <img src="{{ article.image | image_url: height:200, width:200 }}" alt="image" width="" height="200">
+          {%- else -%}
+            {%- assign placehoder_image = 'lifestyle-2' -%}
+            {{ placehoder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
           {%- endif -%}
         </div>
-        
+
       {%- when 'aritcle_content' -%}
         <div class="flex justify-center items-center">
           <div class="max-w-7xl">
-           <p>{{ article.content }}</p>
+            <p>{{ article.content }}</p>
           </div>
         </div>
-        
+
       {%- else -%}
     {%- endcase -%}
   {%- endfor -%}
 </article>
 
 {%- if blog.comments_enabled? -%}
-  <p>comments are enabled</p>
+  <div id="comments" class="my-8">
+    {%- if article.comments.count > 0 -%}
+      <div></div>
+    {%- else -%}
+      <p>There is no Comment on this article</p>
+    {%- endif -%}
+  </div>
+  <div id="comment_form" class="mb-8">
+    {%- form 'new_comment', article -%}
+      <div class="flex flex-col mx-auto items-center max-w-4xl px-4">
+        <div class="px-1 md:flex mb-3">
+          <div class="px-3 mb-3">
+            <label for="comment_author" class="text-gray-700 font-medium uppercase text-x5 mb-2">Name</label>
+            <input
+              type="text"
+              id="comment_author"
+              name="comment[author]"
+              class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none"
+              placeholder="Sajid Yaqoob"
+              requird
+            >
+          </div>
+          <div class="px-3  mb-3">
+            <label for="email_author" class="text-gray-700 font-medium uppercase text-x5 mb-2">Email</label>
+            <input
+              type="email"
+              id="email_author"
+              name="comment[email]"
+              class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none"
+              placeholder="sajidmct21@gmail.com"
+              required
+            >
+          </div>
+        </div>
+        <div class="w-full px-3">
+          <label for="comment_content" class="text-gray-700 font-medium uppercase text-xs mb-3">Comment</label>
+          <textarea
+            name="comment[body]"
+            id="comment_content"
+            class="w-full text-gray-700 font-medium h-20 px-3 focus:outline-none border"
+            required
+          ></textarea>
+        </div>
+        <div class="px-1">
+          <input type="submit" value="Post Comment" class="w-full cursor-pointer px-4 py-2 border text-base font-medium text-white bg-gray-900 hover:bg-gray-500">
+        </div>
+      </div>
+    {%- endform -%}
+  </div>
 {%- else -%}
-  <p>No comment is available</p>
+  <p>Comments are Disable</p>
 {%- endif -%}
 
 {% schema %}
