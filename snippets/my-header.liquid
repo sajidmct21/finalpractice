@@ -1,7 +1,7 @@
-<h1>{{ shop.name }}</h1>
+<h1 class="text-center text-3xl uppercase">{{ shop.name }}</h1>
 
-<ul>
+<ul class="flex ml-3">
   {%- for link in linklists['customer-account-main-menu'].links -%}
-   <li> {{ link.title | link_to: link.url }}</li>
+   <li class="ml-4"> {{ link.title | link_to: link.url }}</li>
   {%- endfor -%}
 </ul>

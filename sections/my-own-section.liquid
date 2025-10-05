@@ -1,35 +1,4 @@
-<<<<<<< HEAD
-<p>
-{{- 'Sajid ' | append: 'Yaqoob' -}}
-</p>
-
-{% assign arr = "one, Two" | split: ',' %}
-{%- assign arr2 = " Three, Four, Five" | split: ',' -%}
-{%- assign arr3 = arr | concat: arr2 -%}
-{%- assign numbers = "1,2,3,3" | split:',' -%}
-
-<p>{{ arr2 | sort }}</p>
-<p>{{ numbers | uniq }}</p>
-
-{%- for num in arr3 -%}
-  {%- if num != blank -%}
-    {{ num }}
-  {%- else -%}
-    {{ 'Item is blank' }}
-  {%- endif -%}
-{%- endfor -%}
-=======
-<h1>Welcome</h1>
-{% assign s1 = 'Sajid' %}
-{% assign s2 = ' Yaqub' %}
-
-{{ s1 | append: s2 }}
-{{ 'sajid yaqub'| camelize }}
-<p>
-{{ 'sajid Yaqub' | capitalize }}
-</p>
-<p>{{ 'SAJID YAQUB' | downcase }}
->>>>>>> a801fc753d3da99138c93abe7689c921e2850c90
+<h1 class="text-3xl mt-3">Home Page</h1>
 
 {% schema %}
 
