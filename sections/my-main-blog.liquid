@@ -36,7 +36,11 @@
       </div>
     </div>
 
-    {{- paginate | default_pagination -}}
+    {% comment %} {{- paginate | default_pagination -}} {% endcomment %}
+     <div class="max-w-6xl mx-auto">
+           {% render 'my-pagination', pagination:paginate %}
+     </div>
+
   {%- endpaginate -%}
 </div>
 
