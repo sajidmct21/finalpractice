@@ -73,27 +73,35 @@
               ></textarea>
             </div>
           </div>
-          <div class="w-full my-4 md:w-80">
-            <h3 class="text-xl">Subtotal:{{ cart.total_price | money }}</h3>
-            <div class="my-2">
-              <button
-                type="submit"
-                name="update"
-                class="w-full p-3 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-              >
-                Update
-              </button>
-            </div>
 
-            <div class="my-2">
-              <button
-                type="submit"
-                name="checkout"
-                class="w-full p-3 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-              >
-                Checkout
-              </button>
-            </div>
+          <div class="w-full my-4 md:w-80">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'subtotal' -%}
+                  <h3 class="text-xl">Subtotal:{{ cart.total_price | money }}</h3>
+                {%- when 'update-button' -%}
+                  <div class="my-2">
+                    <button
+                      type="submit"
+                      name="update"
+                      class="w-full p-3 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+                    >
+                      Update
+                    </button>
+                  </div>
+                {%- when 'checkout-button' -%}
+                  <div class="my-2">
+                    <button
+                      type="submit"
+                      name="checkout"
+                      class="w-full p-3 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+                    >
+                      Checkout
+                    </button>
+                  </div>
+                {%- else -%}
+              {%- endcase -%}
+            {%- endfor -%}
           </div>
         </div>
       </form>
@@ -113,3 +121,33 @@
     </div>
   </div>
 {%- endif -%}
+
+{% schema %}
+{
+  "name": "My Cart",
+  "tag": "section",
+  "class": "cart",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Subtotal",
+      "type": "subtotal",
+      "settings": []
+    },
+    {
+      "name": "Checkout Button",
+      "type": "checkout-button"
+    },
+    {
+      "name": "Update Button",
+      "type": "update-button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "My Cart",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

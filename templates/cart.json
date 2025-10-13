@@ -40,12 +40,22 @@
 // }
 
 {
-  "sections":{
-    "main":{
-      "type":"my-cart"
+  "sections": {
+    "main": {
+      "type": "my-cart",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal"
+        },
+        "update-button": {
+          "type": "update-button"
+        },
+        "checkout-button": {
+          "type": "checkout-button"
+        }
+      },
+      "block_order":["subtotal","update-button","checkout-button"]
     }
   },
-  "order":[
-    "main"
-  ]
+  "order": ["main"]
 }
