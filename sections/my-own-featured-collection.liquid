@@ -1,0 +1,126 @@
+<section class="featured-collection-section">
+  <div class="page-width">
+    
+    {% assign selected_collection = collections[section.settings.collection] %}
+
+    {% if selected_collection %}
+      <!-- Section Heading -->
+      {% if section.settings.heading != blank %}
+        <h2 class="text-3xl font-semibold mb-6 text-center">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      <!-- Collection Description -->
+      {% if section.settings.show_description and selected_collection.description != blank %}
+        <div class="collection-description mb-6 text-center max-w-2xl mx-auto">
+          {{ selected_collection.description }}
+        </div>
+      {% endif %}
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-{{ section.settings.products_per_row }} gap-6">
+        {% for product in selected_collection.products limit: section.settings.products_limit %}
+          <div class="product-item border p-4 rounded text-center">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img 
+                  src="{{ product.featured_image | image_url }}" 
+                  alt="{{ product.featured_image.alt | escape }}" 
+                  class="w-full mb-3 rounded"
+                  width=""
+                  height=""
+                >
+              {% else %}
+                <div class="bg-gray-100 h-64 flex items-center justify-center text-gray-400">
+                  No image
+                </div>
+              {% endif %}
+            </a>
+
+            <h3 class="font-medium text-lg mt-2">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
+
+            <p class="price mt-1">
+              {% if product.compare_at_price > product.price %}
+                <span class="text-red-500">{{ product.price | money }}</span>
+                <span class="line-through text-gray-400 ml-2">{{ product.compare_at_price | money }}</span>
+              {% else %}
+                {{ product.price | money }}
+              {% endif %}
+            </p>
+
+            {% if section.settings.show_add_to_cart %}
+              <form method="post" action="{{ routes.cart_add_url }}" class="mt-3">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <button type="submit" class="bg-black text-white px-4 py-2 rounded w-full">
+                  Add to Cart
+                </button>
+              </form>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <p class="text-center text-gray-500">Please select a collection in the section settings.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "My Featured Collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select collection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show collection description",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "default": "4",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of products to show",
+      "min": 2,
+      "max": 20,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show Add to Cart button",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "My Featured collection"
+    }
+  ]
+}
+{% endschema %}

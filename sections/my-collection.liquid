@@ -1,1 +1,52 @@
-<h1>My Collections</h1>
+<div class="px-4 py-8">
+  {%- paginate collection.products by section.settings.no_products_per_page -%}
+    <h1 class="text-3xl text-center uppercase font-bold mb-4">{{ collection.title }}</h1>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {%- for product in collection.products -%}
+          {%- render 'my-product-card', product: product -%}
+        {%- else -%}
+          <h1>No product</h1>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {% render 'my-pagination', pagination: paginate %}
+    {% comment %} {%- render 'pagination', paginate: paginate -%} {% endcomment %}
+    {% comment %} {{- paginate | default_pagination -}} {% endcomment %}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+  {
+    "name": "my-collection",
+    "tag": "section",
+    "class": "collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select a Collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-vendor",
+        "label": "Show Vendor",
+        "default":true
+      },
+      {
+        "type": "number",
+        "id": "no_products_per_page",
+        "label": "No. of Products per Page",
+        "default":3
+      }
+    ],
+    "presets": [
+      {
+        "name": "My Collection",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}
